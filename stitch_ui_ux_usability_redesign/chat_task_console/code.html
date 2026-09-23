@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Sagara AI - Mission Control</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f8faff;color:#0b1c30;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-container-lowest': '#ffffff', 'pastel-sky-text': '#0284c7', 'surface-container-low': '#eff4ff', 'tertiary-fixed': '#eaddff', 'on-secondary-fixed-variant': '#005049', 'pastel-peach': '#ffedd5', 'rejection-red-subtle': '#fef2f2', 'on-background': '#0b1c30', 'surface-variant': '#d3e4fe', 'terminal-code-bg': '#131b2e', 'approval-green': '#059669', 'secondary-container': '#9defe3', 'on-error-container': '#93000a', 'terminal-code-text': '#dae2fd', 'approval-green-subtle': '#ecfdf5', 'on-primary': '#ffffff', 'on-tertiary': '#ffffff', 'pastel-lavender-text': '#6d28d9', 'on-primary-fixed-variant': '#3f465c', 'secondary-fixed': '#a0f1e6', 'on-primary-fixed': '#131b2e', 'error-container': '#ffdad6', 'on-tertiary-container': '#9863ff', 'surface-bright': '#f8f9ff', 'pastel-lavender': '#f0efff', 'secondary': '#016a61', 'pastel-peach-text': '#ea580c', 'outline': '#76777d', 'surface-dim': '#cbdbf5', 'on-surface': '#0b1c30', 'surface-tint': '#565e74', 'on-tertiary-fixed-variant': '#5a00c6', 'tertiary-container': '#25005a', 'surface-container-highest': '#d3e4fe', 'on-secondary-container': '#0d6f66', 'surface-container-high': '#dce9ff', 'pastel-mint': '#e8faf6', 'on-surface-variant': '#45464d', 'on-error': '#ffffff', 'on-secondary-fixed': '#00201d', 'inverse-primary': '#bec6e0', 'inverse-on-surface': '#eaf1ff', 'rejection-red': '#dc2626', 'on-tertiary-fixed': '#25005a', 'outline-variant': '#c6c6cd', 'inverse-surface': '#213145', 'pastel-mint-text': '#0d9488', 'tertiary': '#000000', 'canvas-bg': '#f8faff', 'primary-fixed-dim': '#bec6e0', 'background': '#f8f9ff', 'on-secondary': '#ffffff', 'primary-fixed': '#dae2fd', 'on-primary-container': '#7c839b', 'surface': '#f8f9ff', 'tertiary-fixed-dim': '#d2bbff', 'error': '#ba1a1a', 'primary-container': '#131b2e', 'primary': '#000000', 'pastel-sky': '#e0f2fe', 'secondary-fixed-dim': '#84d5ca', 'surface-container': '#e5eeff' }, 'borderRadius': { 'DEFAULT': '1rem', 'lg': '2rem', 'xl': '3rem', 'full': '9999px' }, 'spacing': { 'space-xs': '0.25rem', 'space-md': '0.875rem', 'space-lg': '1.25rem', 'space-xl': '1.75rem', 'space-sm': '0.5rem', 'margin': '1.25rem', 'gutter': '1rem' }, 'fontFamily': { 'body-sm': ['Plus Jakarta Sans'], 'display-lg': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'title-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'code-badge': ['Plus Jakarta Sans'], 'code-mono': ['JetBrains Mono'], 'label-lg': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'label-xs': ['Plus Jakarta Sans'], 'headline-sm': ['Plus Jakarta Sans'] }, 'fontSize': { 'body-sm': ['12px', { 'lineHeight': '16px', 'fontWeight': '400' }], 'display-lg': ['32px', { 'lineHeight': '38px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'headline-lg': ['24px', { 'lineHeight': '30px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-md': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'title-md': ['16px', { 'lineHeight': '22px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'body-lg': ['15px', { 'lineHeight': '22px', 'fontWeight': '500' }], 'code-badge': ['18px', { 'lineHeight': '22px', 'letterSpacing': '0.05em', 'fontWeight': '800' }], 'code-mono': ['12px', { 'lineHeight': '16px', 'fontWeight': '500' }], 'label-lg': ['14px', { 'lineHeight': '18px', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'label-md': ['12px', { 'lineHeight': '16px', 'fontWeight': '600' }], 'label-xs': ['10px', { 'lineHeight': '14px', 'letterSpacing': '0.04em', 'fontWeight': '700' }], 'headline-sm': ['18px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '600' }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-2 min-w-0"><button aria-label="Go Back" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #2563eb
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgYjMIAbYcXKT2nCzK3n-pkqp3IgiUwEJx4m5X9Ul7wXpc4NtM3caOx_wUWuFEoHH5543IceSpM0J3GlQsHHJFcJoZ9O7sg3r-lhGJZhThREerSjEyvpVovjPFxKascdpXhfzCiNzQ_cLlNPLJs6cMl73b0rB7NTtb6-Ml7zbe0QoKFCdEmc_yGAz5ne7KaDGIlj11GPKI_BvcK6_X929UmWiliKOey-lBLNeuNXRVnq5vByurz-a-LaHv"/><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight truncate leading-tight">Live Execution Trace</h1><span class="font-code-mono text-label-xs text-on-surface-variant truncate">NODE • SG-01 // AUDIT</span></div></div><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface flex-1 px-margin"><div class="flex flex-col w-full pb-28">
+<!-- 1. Agent Sub-header & Session Banner -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-sm">
+<div class="flex items-center justify-between gap-space-sm mb-2.5">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-pastel-mint flex items-center justify-center relative flex-shrink-0">
+<span class="material-symbols-outlined text-pastel-mint-text text-[20px]">terminal</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-approval-green rounded-full shadow-sm animate-pulse"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface font-bold truncate">IT Coding Agent</span>
+<span class="px-2 py-0.5 rounded-full bg-pastel-lavender text-pastel-lavender-text font-code-mono text-label-xs font-semibold">claude-3-5-sonnet</span>
+</div>
+<p class="font-code-mono text-label-xs text-on-surface-variant truncate">ID: sess-coding-01 • v2.4.9</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Agent options" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Active Task Ribbon -->
+<div class="bg-pastel-sky/50 rounded-md p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-pastel-sky-text text-[16px] flex-shrink-0">commit</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-xs text-label-xs text-pastel-sky-text uppercase tracking-wider font-bold">Active Subtask</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Refactor SQLite WAL transaction lock &amp; B-Tree audit</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-pastel-sky-text font-code-mono text-label-xs shadow-xs font-bold">IN PROGRESS</span>
+</div>
+</div>
+<!-- 2. Telemetry Ribbon (Horizontal Scroll Strip) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 mb-space-md -mx-margin px-margin">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex-shrink-0">
+<span class="w-2 h-2 rounded-full bg-approval-green"></span>
+<span class="font-code-mono text-label-xs text-on-surface font-semibold">Latency: 142ms</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-pastel-lavender-text text-[14px]">database</span>
+<span class="font-code-mono text-label-xs text-on-surface font-semibold">Tokens: 4.8k / 200k</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pastel-mint shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-pastel-mint-text text-[14px]">cloud_done</span>
+<span class="font-code-mono text-label-xs text-pastel-mint-text font-bold">Replica Online (SG-01)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-pastel-peach-text text-[14px]">memory</span>
+<span class="font-code-mono text-label-xs text-on-surface font-semibold">VRAM: 18.2 GB</span>
+</div>
+</div>
+<!-- 3. Message Stream -->
+<div class="flex flex-col gap-space-md mb-space-lg">
+<!-- Timeline Stamp -->
+<div class="flex items-center justify-center my-0.5">
+<span class="px-3 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-mono text-label-xs">
+        TODAY • 14:32:08 UTC
+      </span>
+</div>
+<!-- Message 1: User Bubble -->
+<div class="flex flex-col items-end pl-8">
+<div class="bg-primary-container text-terminal-code-text px-4 py-3 rounded-2xl rounded-tr-xs shadow-sm max-w-full">
+<p class="font-body-md text-body-md text-on-primary">
+          Periksa error SQLite WAL locking yang dilaporkan pada log server backend.
+        </p>
+</div>
+<div class="flex items-center gap-1 mt-1 pr-1">
+<span class="font-code-mono text-label-xs text-on-surface-variant">14:32</span>
+<span class="material-symbols-outlined text-[14px] text-pastel-sky-text">done_all</span>
+</div>
+</div>
+<!-- Message 2: Agent Explanation Bubble -->
+<div class="flex flex-col items-start pr-6">
+<div class="flex items-center gap-2 mb-1 pl-1">
+<div class="w-5 h-5 rounded-full bg-pastel-mint flex items-center justify-center">
+<span class="material-symbols-outlined text-pastel-mint-text text-[13px]">smart_toy</span>
+</div>
+<span class="font-label-xs text-label-xs font-bold text-on-surface">IT Coding Agent</span>
+</div>
+<div class="bg-surface-container-lowest text-on-surface p-space-md rounded-2xl rounded-tl-xs shadow-sm space-y-2.5">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+          Analisis runtime log menemukan kontensi concurrency write pada modul engine:
+        </p>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] flex-shrink-0">description</span>
+<span class="font-code-mono text-label-xs text-on-surface font-semibold truncate">backend/app/adapters/hermes_database.py</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-pastel-lavender text-pastel-lavender-text font-code-mono text-label-xs font-bold flex-shrink-0">L:184-210</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+          Transaksi baca tidak melepaskan checkpointing secara asinkron saat thread pool meluap.
+        </p>
+</div>
+</div>
+<!-- 3. Tool Execution Ticket Card (Transit voucher aesthetic) -->
+<div class="w-full relative shadow-sm rounded-lg overflow-hidden bg-surface-container-lowest">
+<!-- Voucher Top Segment -->
+<div class="bg-pastel-mint p-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-pastel-mint-text text-[18px]">build_circle</span>
+<span class="font-code-mono text-label-xs font-bold text-pastel-mint-text">TOOL DISPATCH • EXEC-891</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-code-mono text-label-xs font-bold text-approval-green flex items-center gap-1 shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-approval-green"></span> SUCCESS
+        </span>
+</div>
+<!-- Ticket Perforated Seam with Notches -->
+<div class="relative w-full h-4 bg-surface-container-lowest flex items-center">
+<div class="absolute -left-2 w-4 h-4 rounded-full bg-surface"></div>
+<div class="w-full border-t border-dashed border-outline-variant/60 mx-4"></div>
+<div class="absolute -right-2 w-4 h-4 rounded-full bg-surface"></div>
+</div>
+<!-- Voucher Bottom Segment -->
+<div class="p-space-md pt-1 bg-surface-container-lowest space-y-2.5">
+<div class="flex items-center justify-between text-label-xs font-code-mono text-on-surface-variant">
+<span>RUN: codebase_inspector()</span>
+<span>TIME: 412ms</span>
+</div>
+<!-- Monospace Console Drawer -->
+<div class="bg-terminal-code-bg rounded-lg p-3 text-terminal-code-text font-code-mono text-code-mono overflow-x-auto no-scrollbar">
+<div class="text-pastel-mint-text font-bold mb-1">// AST Diff Tree:</div>
+<div class="text-terminal-code-text whitespace-pre leading-5 text-[11px]"><span class="text-approval-green">+ def acquire_wal_checkpoint(mode='PASSIVE'):</span>
+<span class="text-approval-green">+     with db_engine.begin() as conn:</span>
+<span class="text-approval-green">+         return conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")</span>
+<span class="text-rejection-red">- db.execute("PRAGMA synchronous = FULL;")</span></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Target: SQLite Replica SG-01</span>
+<button class="text-pastel-sky-text font-label-xs text-label-xs font-bold flex items-center gap-0.5">
+            View full AST trace <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Message 4: User Bubble -->
+<div class="flex flex-col items-end pl-8">
+<div class="bg-primary-container text-terminal-code-text px-4 py-3 rounded-2xl rounded-tr-xs shadow-sm max-w-full">
+<p class="font-body-md text-body-md text-on-primary">
+          Lakukan dry-run migrasi database replica B-Tree index.
+        </p>
+</div>
+<div class="flex items-center gap-1 mt-1 pr-1">
+<span class="font-code-mono text-label-xs text-on-surface-variant">14:34</span>
+<span class="material-symbols-outlined text-[14px] text-pastel-sky-text">done_all</span>
+</div>
+</div>
+<!-- Message 5: Agent HITL Authorization Request (Perforated Approval Ticket) -->
+<div class="w-full relative shadow-md rounded-lg overflow-hidden bg-surface-container-lowest">
+<!-- Voucher Top Segment -->
+<div class="bg-pastel-lavender p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-pastel-lavender-text text-[18px]">verified_user</span>
+<span class="font-code-mono text-label-xs font-bold text-pastel-lavender-text truncate">HITL ACTION • TICKET #AUTH-402</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-pastel-peach text-pastel-peach-text font-code-mono text-label-xs font-bold shadow-xs flex-shrink-0">
+          AWAITING APPROVAL
+        </span>
+</div>
+<!-- Ticket Perforated Seam with Notches -->
+<div class="relative w-full h-4 bg-surface-container-lowest flex items-center">
+<div class="absolute -left-2 w-4 h-4 rounded-full bg-surface"></div>
+<div class="w-full border-t border-dashed border-outline-variant/60 mx-4"></div>
+<div class="absolute -right-2 w-4 h-4 rounded-full bg-surface"></div>
+</div>
+<!-- Voucher Bottom Segment: Payload & Interactive Execution Pair -->
+<div class="p-space-md pt-1 bg-surface-container-lowest space-y-3">
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Reindex Dry-Run Proposal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dry-run simulasi migrasi B-Tree &amp; validasi integritas WAL</span>
+</div>
+<!-- Telemetry Stats Row in Ticket -->
+<div class="grid grid-cols-3 gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Est. Lock</span>
+<span class="font-code-mono text-label-md font-bold text-approval-green">12 ms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Rows Affected</span>
+<span class="font-code-mono text-label-md font-bold text-on-surface">148,290</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant">Safety Check</span>
+<span class="font-code-mono text-label-md font-bold text-pastel-sky-text">PASSED</span>
+</div>
+</div>
+<!-- Dry Run Payload Monospace View -->
+<div class="bg-terminal-code-bg rounded-lg p-3 text-terminal-code-text font-code-mono text-[11px] leading-4 overflow-x-auto no-scrollbar">
+<div class="text-on-primary-container mb-1">// Dry-run migration payload:</div>
+<pre class="m-0 text-terminal-code-text"><code>{
+  "action": "REINDEX_BTREE_SIMULATION",
+  "target_table": "telemetry_event_ledger",
+  "lock_strategy": "DEFERRED_SHARED",
+  "rollback_snapshot": "snap_wal_20240223_01",
+  "dry_run_timeout_ms": 1500
+}</code></pre>
+</div>
+<!-- Binary HITL Buttons (Interactive State Hooks) -->
+<div class="flex items-center gap-2 pt-1" id="hitl-actions">
+<button class="flex-1 h-11 rounded-full bg-approval-green text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" id="btn-approve" onclick="handleHITL(true)">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+            ✓ Otorisasi
+          </button>
+<button class="flex-1 h-11 rounded-full bg-rejection-red-subtle text-rejection-red font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" id="btn-reject" onclick="handleHITL(false)">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+            ✕ Tolak
+          </button>
+</div>
+<div class="hidden text-center py-2 font-code-mono text-label-xs rounded-full" id="hitl-feedback"></div>
+</div>
+</div>
+</div>
+<!-- 4. Quick Command Dispatch Chips -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-xs text-label-xs font-bold text-on-surface-variant uppercase tracking-wider">Quick Commands</span>
+<span class="font-label-xs text-label-xs text-pastel-sky-text font-bold">Auto-Triage Active</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-margin px-margin pb-1">
+<button class="px-3.5 py-2 rounded-full bg-pastel-mint text-pastel-mint-text font-label-md text-label-md font-semibold flex items-center gap-1.5 flex-shrink-0 active:scale-95 transition-transform shadow-xs" onclick="insertPrompt('+ Refactor WAL lock')">
+<span class="material-symbols-outlined text-[15px]">code_blocks</span>
+        + Refactor WAL lock
+      </button>
+<button class="px-3.5 py-2 rounded-full bg-pastel-lavender text-pastel-lavender-text font-label-md text-label-md font-semibold flex items-center gap-1.5 flex-shrink-0 active:scale-95 transition-transform shadow-xs" onclick="insertPrompt('+ Tulis unit test')">
+<span class="material-symbols-outlined text-[15px]">science</span>
+        + Tulis unit test
+      </button>
+<button class="px-3.5 py-2 rounded-full bg-pastel-peach text-pastel-peach-text font-label-md text-label-md font-semibold flex items-center gap-1.5 flex-shrink-0 active:scale-95 transition-transform shadow-xs" onclick="insertPrompt('+ Audit Index')">
+<span class="material-symbols-outlined text-[15px]">manage_search</span>
+        + Audit Index
+      </button>
+</div>
+</div>
+<!-- 5. Priority Level Selector -->
+<div class="mb-space-md bg-surface-container-lowest rounded-lg p-3 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-xs text-label-xs font-bold text-on-surface-variant uppercase tracking-wider">Mission Priority</span>
+<span class="font-code-mono text-label-xs text-on-surface-variant">SLA: 99.98%</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 bg-surface-container-low p-1 rounded-full">
+<button class="priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs text-on-surface-variant font-bold transition-all" onclick="setPriority(this, 'LOW')">
+        LOW
+      </button>
+<button class="priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs font-bold bg-primary text-on-primary shadow-xs transition-all" onclick="setPriority(this, 'MEDIUM')">
+        MEDIUM
+      </button>
+<button class="priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs text-on-surface-variant font-bold transition-all" onclick="setPriority(this, 'HIGH')">
+        HIGH
+      </button>
+<button class="priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs text-rejection-red font-bold transition-all" onclick="setPriority(this, 'CRITICAL')">
+        CRIT
+      </button>
+</div>
+</div>
+<!-- 6. Floating Capsule Command Input Bar -->
+<div class="fixed bottom-3 inset-x-0 mx-margin z-40 max-w-lg mx-auto">
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl shadow-lg rounded-full p-1.5 flex items-center gap-2">
+<!-- Target Mode Chip -->
+<button aria-label="Toggle agent node" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</button>
+<!-- Input Field -->
+<input class="flex-1 bg-transparent border-0 outline-none font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 min-w-0 px-1" id="agent-chat-input" placeholder="Kirim instruksi kode atau CLI command..." type="text"/>
+<!-- Voice / Mic Trigger -->
+<button aria-label="Voice input" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:scale-95 flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<!-- Primary Send Execution Button -->
+<button aria-label="Send command" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-95 transition-transform flex-shrink-0" id="send-command-btn" onclick="sendMessage()">
+<span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function insertPrompt(text) {
+    const input = document.getElementById('agent-chat-input');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  function setPriority(button, level) {
+    const buttons = document.querySelectorAll('.priority-btn');
+    buttons.forEach(btn => {
+      btn.className = 'priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs text-on-surface-variant font-bold transition-all';
+    });
+    if (level === 'CRITICAL') {
+      button.className = 'priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs font-bold bg-rejection-red text-on-error shadow-xs transition-all';
+    } else {
+      button.className = 'priority-btn py-1.5 rounded-full text-center font-label-xs text-label-xs font-bold bg-primary text-on-primary shadow-xs transition-all';
+    }
+  }
+
+  function handleHITL(isApproved) {
+    const actionContainer = document.getElementById('hitl-actions');
+    const feedback = document.getElementById('hitl-feedback');
+    if (!actionContainer || !feedback) return;
+
+    actionContainer.classList.add('hidden');
+    feedback.classList.remove('hidden');
+
+    if (isApproved) {
+      feedback.className = 'text-center py-2 font-code-mono text-label-xs rounded-full bg-approval-green-subtle text-approval-green font-bold';
+      feedback.innerHTML = '✓ OTORISASI DISETUJUI • DISPATCHED TO REPLICA';
+    } else {
+      feedback.className = 'text-center py-2 font-code-mono text-label-xs rounded-full bg-rejection-red-subtle text-rejection-red font-bold';
+      feedback.innerHTML = '✕ REINDEX DIBATALKAN OLEH OPERATOR';
+    }
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('agent-chat-input');
+    if (!input || !input.value.trim()) return;
+    
+    // Clear input and provide tactile confirmation
+    const btn = document.getElementById('send-command-btn');
+    if (btn) {
+      btn.style.transform = 'scale(0.85)';
+      setTimeout(() => { btn.style.transform = 'scale(1)'; }, 150);
+    }
+    input.value = '';
+    input.placeholder = 'Perintah dikirim ke antrean swarm...';
+    setTimeout(() => {
+      input.placeholder = 'Kirim instruksi kode atau CLI command...';
+    }, 2000);
+  }
+</script></main></body></html>

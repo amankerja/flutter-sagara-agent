@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><title>Sagara AI - Mission Control</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f8faff;color:#0b1c30;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-container-lowest': '#ffffff', 'pastel-sky-text': '#0284c7', 'surface-container-low': '#eff4ff', 'tertiary-fixed': '#eaddff', 'on-secondary-fixed-variant': '#005049', 'pastel-peach': '#ffedd5', 'rejection-red-subtle': '#fef2f2', 'on-background': '#0b1c30', 'surface-variant': '#d3e4fe', 'terminal-code-bg': '#131b2e', 'approval-green': '#059669', 'secondary-container': '#9defe3', 'on-error-container': '#93000a', 'terminal-code-text': '#dae2fd', 'approval-green-subtle': '#ecfdf5', 'on-primary': '#ffffff', 'on-tertiary': '#ffffff', 'pastel-lavender-text': '#6d28d9', 'on-primary-fixed-variant': '#3f465c', 'secondary-fixed': '#a0f1e6', 'on-primary-fixed': '#131b2e', 'error-container': '#ffdad6', 'on-tertiary-container': '#9863ff', 'surface-bright': '#f8f9ff', 'pastel-lavender': '#f0efff', 'secondary': '#016a61', 'pastel-peach-text': '#ea580c', 'outline': '#76777d', 'surface-dim': '#cbdbf5', 'on-surface': '#0b1c30', 'surface-tint': '#565e74', 'on-tertiary-fixed-variant': '#5a00c6', 'tertiary-container': '#25005a', 'surface-container-highest': '#d3e4fe', 'on-secondary-container': '#0d6f66', 'surface-container-high': '#dce9ff', 'pastel-mint': '#e8faf6', 'on-surface-variant': '#45464d', 'on-error': '#ffffff', 'on-secondary-fixed': '#00201d', 'inverse-primary': '#bec6e0', 'inverse-on-surface': '#eaf1ff', 'rejection-red': '#dc2626', 'on-tertiary-fixed': '#25005a', 'outline-variant': '#c6c6cd', 'inverse-surface': '#213145', 'pastel-mint-text': '#0d9488', 'tertiary': '#000000', 'canvas-bg': '#f8faff', 'primary-fixed-dim': '#bec6e0', 'background': '#f8f9ff', 'on-secondary': '#ffffff', 'primary-fixed': '#dae2fd', 'on-primary-container': '#7c839b', 'surface': '#f8f9ff', 'tertiary-fixed-dim': '#d2bbff', 'error': '#ba1a1a', 'primary-container': '#131b2e', 'primary': '#000000', 'pastel-sky': '#e0f2fe', 'secondary-fixed-dim': '#84d5ca', 'surface-container': '#e5eeff' }, 'borderRadius': { 'DEFAULT': '1rem', 'lg': '2rem', 'xl': '3rem', 'full': '9999px' }, 'spacing': { 'space-xs': '0.25rem', 'space-md': '0.875rem', 'space-lg': '1.25rem', 'space-xl': '1.75rem', 'space-sm': '0.5rem', 'margin': '1.25rem', 'gutter': '1rem' }, 'fontFamily': { 'body-sm': ['Plus Jakarta Sans'], 'display-lg': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'title-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'code-badge': ['Plus Jakarta Sans'], 'code-mono': ['JetBrains Mono'], 'label-lg': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'label-xs': ['Plus Jakarta Sans'], 'headline-sm': ['Plus Jakarta Sans'] }, 'fontSize': { 'body-sm': ['12px', { 'lineHeight': '16px', 'fontWeight': '400' }], 'display-lg': ['32px', { 'lineHeight': '38px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'headline-lg': ['24px', { 'lineHeight': '30px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-md': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'title-md': ['16px', { 'lineHeight': '22px', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'body-lg': ['15px', { 'lineHeight': '22px', 'fontWeight': '500' }], 'code-badge': ['18px', { 'lineHeight': '22px', 'letterSpacing': '0.05em', 'fontWeight': '800' }], 'code-mono': ['12px', { 'lineHeight': '16px', 'fontWeight': '500' }], 'label-lg': ['14px', { 'lineHeight': '18px', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'label-md': ['12px', { 'lineHeight': '16px', 'fontWeight': '600' }], 'label-xs': ['10px', { 'lineHeight': '14px', 'letterSpacing': '0.04em', 'fontWeight': '700' }], 'headline-sm': ['18px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '600' }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Brand logo. - Primary color: #2563eb
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgYjMIAbYcXKT2nCzK3n-pkqp3IgiUwEJx4m5X9Ul7wXpc4NtM3caOx_wUWuFEoHH5543IceSpM0J3GlQsHHJFcJoZ9O7sg3r-lhGJZhThREerSjEyvpVovjPFxKascdpXhfzCiNzQ_cLlNPLJs6cMl73b0rB7NTtb6-Ml7zbe0QoKFCdEmc_yGAz5ne7KaDGIlj11GPKI_BvcK6_X929UmWiliKOey-lBLNeuNXRVnq5vByurz-a-LaHv"><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-title-md text-title-md text-on-surface tracking-tight truncate">Sagara AI</span><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-pastel-mint text-pastel-mint-text font-code-mono text-[10px] uppercase font-bold tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-approval-green animate-pulse"></span>LIVE NODE • SG-01</span></div><span class="font-label-xs text-label-xs text-on-surface-variant truncate uppercase tracking-widest">Mission Overview</span></div></div><div class="flex items-center gap-2"><button aria-label="Notifications" class="relative w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-4 h-4 rounded-full bg-rejection-red text-on-primary font-label-xs text-[10px] flex items-center justify-center font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface flex-1 px-margin"><div class="flex flex-col w-full gap-y-space-lg">
+<!-- Aerodynamic Telemetry Status Hero Card -->
+<section class="relative overflow-hidden rounded-lg bg-pastel-mint p-space-lg shadow-sm">
+<!-- Atmospheric tech graphic backdrop -->
+<div class="absolute -right-8 -top-8 w-44 h-44 rounded-full bg-pastel-sky/50 blur-2xl pointer-events-none"></div>
+<div class="absolute -right-2 bottom-0 w-36 h-28 pointer-events-none opacity-80">
+<svg class="w-full h-full" fill="none" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 80 C 40 40, 80 90, 130 20" opacity="0.35" stroke="#016a61" stroke-dasharray="4 6" stroke-linecap="round" stroke-width="3"></path>
+<path d="M30 90 C 60 60, 100 70, 140 35" opacity="0.5" stroke="#0d9488" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="130" cy="20" fill="#059669" r="4"></circle>
+<circle cx="75" cy="62" fill="#016a61" opacity="0.6" r="3"></circle>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 shadow-sm backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-approval-green animate-pulse"></span>
+<span class="font-code-mono text-label-xs text-pastel-mint-text font-bold uppercase tracking-wider">ONLINE • 16ms</span>
+</div>
+<span class="font-code-mono text-label-xs text-on-surface-variant/80">sagara-vps-sg01</span>
+</div>
+<div class="mt-1">
+<span class="font-label-xs text-on-surface-variant uppercase tracking-widest block font-bold">Autonomous Gateway</span>
+<h1 class="font-bold text-[20px] text-on-surface tracking-tight mt-0.5">Mission Control</h1>
+</div>
+<div class="flex items-center gap-space-md pt-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-pastel-mint-text text-[18px]">dns</span>
+<span class="font-code-mono text-body-sm text-on-surface-variant">Cluster SG-Primary</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-pastel-mint-text text-[18px]">memory</span>
+<span class="font-code-mono text-body-sm text-on-surface-variant">VRAM 38%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Department Division Cards (Travel App Transport Metaphor) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-md text-title-md text-on-surface">Department Units</h2>
+<button class="font-label-xs text-pastel-sky-text uppercase tracking-wider font-bold hover:underline">Manage</button>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Unit 1: Governance -->
+<button class="flex flex-col items-center justify-between p-2.5 rounded-DEFAULT bg-pastel-lavender hover:opacity-95 transition-transform active:scale-95 text-center min-h-[96px] shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-pastel-lavender-text text-[22px]">shield</span>
+</div>
+<span class="font-label-xs text-label-xs text-pastel-lavender-text font-bold leading-tight mt-2">Governance</span>
+</button>
+<!-- Unit 2: Infra Lab -->
+<button class="flex flex-col items-center justify-between p-2.5 rounded-DEFAULT bg-pastel-mint hover:opacity-95 transition-transform active:scale-95 text-center min-h-[96px] shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-pastel-mint-text text-[22px]">terminal</span>
+</div>
+<span class="font-label-xs text-label-xs text-pastel-mint-text font-bold leading-tight mt-2">Infra Lab</span>
+</button>
+<!-- Unit 3: Growth & CS -->
+<button class="flex flex-col items-center justify-between p-2.5 rounded-DEFAULT bg-pastel-peach hover:opacity-95 transition-transform active:scale-95 text-center min-h-[96px] shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-pastel-peach-text text-[22px]">auto_awesome</span>
+</div>
+<span class="font-label-xs text-label-xs text-pastel-peach-text font-bold leading-tight mt-2">Growth &amp; CS</span>
+</button>
+<!-- Unit 4: Swarm Sync -->
+<button class="flex flex-col items-center justify-between p-2.5 rounded-DEFAULT bg-pastel-sky hover:opacity-95 transition-transform active:scale-95 text-center min-h-[96px] shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-pastel-sky-text text-[22px]">hub</span>
+</div>
+<span class="font-label-xs text-label-xs text-pastel-sky-text font-bold leading-tight mt-2">Swarm Sync</span>
+</button>
+</div>
+</section>
+<!-- Attention Voucher Banner (Ticket Stash Perforated Design) -->
+<section class="relative bg-surface-container-lowest rounded-lg shadow-md overflow-hidden">
+<!-- Voucher Top Tagline -->
+<div class="bg-pastel-peach p-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-pastel-peach-text text-[20px]">warning</span>
+<span class="font-label-xs text-label-xs text-pastel-peach-text uppercase font-bold tracking-wider">Human-In-The-Loop Clearance</span>
+</div>
+<span class="font-code-mono text-label-xs text-pastel-peach-text font-bold bg-surface-container-lowest/80 px-2 py-0.5 rounded-full">GATE 03</span>
+</div>
+<!-- Perforated Cutout Line -->
+<div class="relative flex items-center justify-between px-0 bg-surface-container-lowest">
+<div class="w-4 h-6 rounded-r-full bg-surface"></div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/50 mx-2"></div>
+<div class="w-4 h-6 rounded-l-full bg-surface"></div>
+</div>
+<!-- Voucher Bottom Content -->
+<div class="p-space-md pt-2 flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface">3 Approvals Blocked</span><p class="font-body-sm text-label-xs text-on-surface-variant mt-0.5">RDS migration &amp; fault test butuh sign-off supervisor.</p></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-1 text-rejection-red">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span class="font-code-mono text-label-xs font-bold">Expires in 08:45m</span>
+</div>
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform">
+<span class="">Review Tickets</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Operational Work Queue Status -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-md text-title-md text-on-surface">Work Stream Pipeline</h2>
+<span class="font-code-mono text-label-xs text-on-surface-variant font-bold">CYCLE #1492</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Ready -->
+<div class="flex flex-col p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-bold uppercase">Ready</span>
+<span class="font-bold text-[20px] text-on-surface mt-0.5">1</span>
+<span class="font-body-sm text-[11px] text-pastel-sky-text mt-0.5 flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pastel-sky-text"></span> Queued
+        </span>
+</div>
+<!-- Active -->
+<div class="flex flex-col p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-bold uppercase">Active</span>
+<span class="font-bold text-[20px] text-on-surface mt-0.5">2</span>
+<span class="font-body-sm text-[11px] text-pastel-mint-text mt-0.5 flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-approval-green"></span> Running
+        </span>
+</div>
+<!-- Needs OK -->
+<div class="flex flex-col p-3 rounded-DEFAULT bg-rejection-red-subtle shadow-sm relative overflow-hidden">
+<div class="absolute top-1 right-1 w-2 h-2 rounded-full bg-rejection-red animate-ping"></div>
+<span class="font-bold text-[20px] text-rejection-red mt-0.5">3</span>
+<span class="font-headline-lg text-headline-lg text-rejection-red mt-1">3</span>
+<span class="font-body-sm text-[11px] text-rejection-red mt-0.5 font-bold">Hold</span>
+</div>
+<!-- Done -->
+<div class="flex flex-col p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-bold uppercase">Done</span>
+<span class="font-bold text-[20px] text-on-surface mt-0.5">12</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Today</span>
+</div>
+</div>
+</section>
+<!-- Active Autonomous Agents List -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-title-md text-on-surface">Active Fleet Units</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-mono text-label-xs font-bold">2 Live</span>
+</div>
+<button class="font-label-xs text-pastel-sky-text uppercase tracking-wider font-bold hover:underline">All Armada</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Agent 1: Lead Manager -->
+<div class="flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-DEFAULT bg-pastel-lavender flex items-center justify-center">
+<span class="material-symbols-outlined text-pastel-lavender-text text-[24px]">cognition</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface">Lead Manager</span>
+<span class="px-1.5 py-0.2 rounded bg-pastel-lavender text-pastel-lavender-text font-code-mono text-[10px] font-bold">v3.7</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Claude 3.7 Sonnet (Thinking)</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span class="">Buka Chat</span>
+</button>
+</div>
+<!-- Task & Transit Visual Metric -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-body-sm text-on-surface font-semibold truncate">Roadmap allocation</span>
+<span class="font-code-mono text-pastel-mint-text font-bold text-label-xs">82%</span>
+</div>
+<!-- Progress Track -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-pastel-lavender-text rounded-full" style="width: 82%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="font-code-mono">Memory: 4.2k tokens</span>
+<span class="flex items-center gap-1 font-body-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-approval-green animate-pulse"></span>
+              Dispatching to Infra-01
+            </span>
+</div>
+</div>
+</div>
+<!-- Agent 2: IT Coding Agent -->
+<div class="flex flex-col p-space-md rounded-lg bg-surface-container-lowest shadow-sm gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-DEFAULT bg-pastel-sky flex items-center justify-center">
+<span class="material-symbols-outlined text-pastel-sky-text text-[24px]">terminal</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface">IT Coding Agent</span>
+<span class="px-1.5 py-0.2 rounded bg-pastel-sky text-pastel-sky-text font-code-mono text-[10px] font-bold">v3.5</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Claude 3.5 Sonnet Runner</span>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span class="">Buka Chat</span>
+</button>
+</div>
+<!-- Task & Monospace snippet -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-body-sm text-on-surface font-semibold truncate">Auth guard refactor</span>
+<span class="font-code-mono text-pastel-sky-text font-bold text-label-xs">45%</span>
+</div>
+<!-- Monospace mini snippet drawer -->
+<div class="rounded bg-terminal-code-bg p-2 text-terminal-code-text font-code-mono text-[11px] leading-relaxed overflow-x-auto">
+<code>&gt; git checkout -b fix/jwt-rotation &amp;&amp; pnpm test</code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Activity Stream -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-md text-title-md text-on-surface">Live Swarm Telemetry</h2>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-approval-green animate-ping"></span>
+<span class="font-code-mono text-[11px] text-pastel-mint-text font-bold">STREAMING</span>
+</div>
+</div>
+<!-- Filter Pills (Travel App Tag Style) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-xs font-bold shrink-0 shadow-sm">
+        All Events
+      </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-xs font-semibold shrink-0 shadow-sm hover:bg-surface-container">
+        Swarm Dispatch
+      </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-xs font-semibold shrink-0 shadow-sm hover:bg-surface-container">
+        Audits &amp; Tests
+      </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-xs font-semibold shrink-0 shadow-sm hover:bg-surface-container">
+        Rollbacks
+      </button>
+</div>
+<!-- Stream Events List -->
+<div class="flex flex-col gap-2">
+<!-- Item 1 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<div class="w-7 h-7 rounded-full bg-pastel-mint flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-pastel-mint-text text-[16px]">check_circle</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface truncate">Database replication checkpoint reached</span>
+<span class="font-code-mono text-[10px] text-on-surface-variant shrink-0">12s ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero lag pada replica shard SG.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<div class="w-7 h-7 rounded-full bg-pastel-peach flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-pastel-peach-text text-[16px]">flag</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface truncate">Approval Required: PR #882</span>
+<span class="font-code-mono text-[10px] text-on-surface-variant shrink-0">1m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Infra agent ditunda untuk guardrail check.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-lowest shadow-sm">
+<div class="w-7 h-7 rounded-full bg-pastel-lavender flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-pastel-lavender-text text-[16px]">sync_alt</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface truncate">Swarm Sync re-balanced</span>
+<span class="font-code-mono text-[10px] text-on-surface-variant shrink-0">4m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Node 03 bersihkan 1.8GB memory cache.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Micro-interaction: Subtle dynamic touch reaction on command pills
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('touchstart', () => {
+      btn.style.transform = 'scale(0.97)';
+    });
+    btn.addEventListener('touchend', () => {
+      btn.style.transform = 'scale(1)';
+    });
+  });
+</script></main><div class="fixed bottom-0 inset-x-0 z-50 pointer-events-none pb-safe"><div class="px-space-md pb-4 pt-2"><nav class="pointer-events-auto mx-auto max-w-md h-16 px-2 bg-surface-container-lowest/90 backdrop-blur-xl rounded-full shadow-[0_12px_36px_-4px_rgba(15,23,42,0.12)] flex items-center justify-around" data-active-classes="bg-primary text-on-primary shadow-sm"><a aria-current="page" class="flex items-center justify-center w-12 h-12 rounded-full transition-all bg-primary text-on-primary shadow-sm" data-path="mission-overview" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span></a><a class="relative flex items-center justify-center w-12 h-12 rounded-full text-on-surface-variant transition-all" data-path="pending-approvals" href="#"><span class="material-symbols-outlined text-[24px]">verified_user</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-rejection-red text-on-primary font-label-xs text-[10px] flex items-center justify-center font-bold leading-none">3</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-on-surface-variant transition-all" data-path="agent-armada" href="#"><span class="material-symbols-outlined text-[24px]">smart_toy</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-on-surface-variant transition-all" data-path="swarm-tasks" href="#"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-on-surface-variant transition-all" data-path="mission-schedule" href="#"><span class="material-symbols-outlined text-[24px]">calendar_today</span></a></nav></div></div>
+
+</body></html>

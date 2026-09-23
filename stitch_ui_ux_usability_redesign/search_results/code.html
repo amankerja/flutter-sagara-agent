@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#c6c6cd", "on-primary-fixed-variant": "#3f465c", "on-surface-variant": "#45464d", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#5516be", "surface-container-lowest": "#ffffff", "secondary": "#006a61", "surface-dim": "#cbdbf5", "primary-fixed": "#dae2fd", "surface-container-low": "#eff4ff", "on-primary-container": "#7c839b", "surface-container-high": "#dce9ff", "tertiary-fixed": "#e9ddff", "on-secondary-fixed": "#00201d", "tertiary-fixed-dim": "#d0bcff", "background": "#f8f9ff", "error-container": "#ffdad6", "on-background": "#0b1c30", "secondary-container": "#86f2e4", "surface-container": "#e5eeff", "primary": "#000000", "surface-bright": "#f8f9ff", "on-surface": "#0b1c30", "inverse-on-surface": "#eaf1ff", "secondary-fixed": "#89f5e7", "primary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-secondary-container": "#006f66", "error": "#ba1a1a", "secondary-fixed-dim": "#6bd8cb", "tertiary": "#000000", "on-tertiary-fixed": "#23005c", "on-error-container": "#93000a", "inverse-surface": "#213145", "surface-variant": "#d3e4fe", "surface-tint": "#565e74", "tertiary-container": "#23005c", "outline": "#76777d", "surface": "#f8f9ff", "inverse-primary": "#bec6e0", "on-secondary-fixed-variant": "#005049", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#131b2e", "primary-container": "#131b2e", "on-error": "#ffffff", "on-tertiary-container": "#9466ff" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "gutter": "1rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.25rem", "space-xl": "1.75rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-xs": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "code-mono": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}], "display-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["15px", {"lineHeight": "22px", "fontWeight": "500"}], "label-xs": ["10px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "code-mono": ["20px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "800"}], "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}], "title-md": ["16px", {"lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-lg text-body-lg text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-secondary-container/50 flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-[20px]">flight_takeoff</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface">Tickets</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full px-margin pb-6 gap-y-5">
+<!-- Top Navigation & Action Row -->
+<div class="flex items-center justify-between pt-2">
+<button aria-label="Go Back" class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-[0_4px_16px_rgba(15,23,42,0.05)] flex items-center justify-center text-on-surface hover:scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Share Search" class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-[0_4px_16px_rgba(15,23,42,0.05)] flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="More Options" class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-[0_4px_16px_rgba(15,23,42,0.05)] flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Screen Headline & Result Count -->
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Search Results</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      There are <span class="font-label-lg text-label-lg text-secondary font-bold">43 search results</span> from Jakarta to Bandung
+    </p>
+</div>
+<!-- Selected Route Pill Summary Bar -->
+<div class="w-full bg-surface-container-low rounded-full p-1.5 shadow-[0_4px_20px_rgba(0,106,97,0.04)] flex items-center justify-between relative">
+<!-- Origin Capsule -->
+<div class="flex items-center gap-2 pl-3 py-1.5 flex-1 min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-container/60 flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[15px]">trip_origin</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-on-surface-variant leading-none">From</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Jakarta</span>
+</div>
+</div>
+<!-- Swap Action Button Center -->
+<div class="mx-1 shrink-0">
+<button aria-label="Swap Locations" class="w-8 h-8 rounded-full bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface active:rotate-180 transition-transform duration-300">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+</button>
+</div>
+<!-- Destination Capsule -->
+<div class="flex items-center gap-2 pr-3 py-1.5 flex-1 min-w-0 justify-end text-right">
+<div class="flex flex-col min-w-0 items-end">
+<span class="font-label-xs text-label-xs text-on-surface-variant leading-none">To</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Bandung</span>
+</div>
+<div class="w-7 h-7 rounded-full bg-primary-fixed/70 flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+</div>
+</div>
+</div>
+<!-- Quick Filter Horizon Strip -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar -mx-margin px-margin">
+<button class="shrink-0 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filters (2)</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex items-center gap-1">
+<span>Fastest</span>
+<span class="material-symbols-outlined text-[15px]">bolt</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex items-center gap-1">
+<span>Cheapest</span>
+</button>
+<button class="shrink-0 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex items-center gap-1">
+<span>Earliest departure</span>
+</button>
+</div>
+<!-- Search Results Cards Stack -->
+<div class="flex flex-col gap-4">
+<!-- Card 1: Whoosh High Speed Rail -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-5 shadow-[0_10px_30px_-6px_rgba(15,23,42,0.06)] flex flex-col gap-4 relative overflow-hidden transition-transform active:scale-[0.99]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-error-container/40 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">speed</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-bold">Whoosh</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Business Class • G1024</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Favorite" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<button aria-label="Bookmark" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Route Visualizer -->
+<div class="flex items-center justify-between px-1 py-1">
+<div class="flex flex-col items-start min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">HLM</span>
+<span class="font-label-md text-label-md text-on-surface-variant">06:40</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Halim Stn</span>
+</div>
+<!-- Trajectory Graphic -->
+<div class="flex-1 flex flex-col items-center px-3">
+<span class="font-label-xs text-label-xs text-secondary font-bold tracking-wide mb-1">50min</span>
+<div class="w-full flex items-center justify-center relative">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant/40 shrink-0"></div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">train</span>
+</div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-2 h-2 rounded-full bg-secondary shrink-0"></div>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant/70 mt-1">Direct Transit</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">PDLG</span>
+<span class="font-label-md text-label-md text-on-surface-variant">07:20</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Padalarang</span>
+</div>
+</div>
+<!-- Card Bottom Strip: Rating, Badge, and Pill CTA Price -->
+<div class="flex items-center justify-between pt-2 border-t-0">
+<div class="flex items-center gap-2 flex-wrap">
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-md text-on-surface font-bold">4.6</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-xs text-label-xs px-2.5 py-1 rounded-full font-semibold">
+            Ability to reschedule
+          </span>
+</div>
+<button class="bg-primary text-on-primary font-title-md text-title-md px-4 py-2 rounded-full shadow-[0_6px_20px_rgba(0,0,0,0.18)] hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1">
+<span class="font-bold">$81</span>
+<span class="font-label-xs text-label-xs opacity-70">/pax</span>
+</button>
+</div>
+</div>
+<!-- Card 2: KAI Argo Parahyangan -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-5 shadow-[0_10px_30px_-6px_rgba(15,23,42,0.06)] flex flex-col gap-4 relative overflow-hidden transition-transform active:scale-[0.99]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[22px]">directions_subway</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-bold">KAI</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-medium">Economy</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Argo Parahyangan 42</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Favorite" class="w-8 h-8 rounded-full flex items-center justify-center text-error active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button aria-label="Bookmark" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Route Visualizer -->
+<div class="flex items-center justify-between px-1 py-1">
+<div class="flex flex-col items-start min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">GMR</span>
+<span class="font-label-md text-label-md text-on-surface-variant">13:10</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Gambir</span>
+</div>
+<!-- Trajectory Graphic -->
+<div class="flex-1 flex flex-col items-center px-3">
+<span class="font-label-xs text-label-xs text-on-surface font-bold tracking-wide mb-1">3hr 2min</span>
+<div class="w-full flex items-center justify-center relative">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant/40 shrink-0"></div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">tram</span>
+</div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-2 h-2 rounded-full bg-on-surface shrink-0"></div>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant/70 mt-1">Scenic mountain line</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">BDG</span>
+<span class="font-label-md text-label-md text-on-surface-variant">16:12</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Bandung Hall</span>
+</div>
+</div>
+<!-- Card Bottom Strip: Rating, Badge, and Price -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 flex-wrap">
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-md text-on-surface font-bold">4.4</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-xs text-label-xs px-2.5 py-1 rounded-full font-semibold">
+            Ability to reschedule
+          </span>
+</div>
+<button class="bg-primary text-on-primary font-title-md text-title-md px-4 py-2 rounded-full shadow-[0_6px_20px_rgba(0,0,0,0.18)] hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1">
+<span class="font-bold">$89</span>
+<span class="font-label-xs text-label-xs opacity-70">/pax</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Whoosh Express Intercity -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-5 shadow-[0_10px_30px_-6px_rgba(15,23,42,0.06)] flex flex-col gap-4 relative overflow-hidden transition-transform active:scale-[0.99]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-tertiary-fixed/60 flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[22px]">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-bold">Whoosh Express</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-semibold">VIP</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Business Premiere</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Favorite" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+<button aria-label="Bookmark" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Route Visualizer -->
+<div class="flex items-center justify-between px-1 py-1">
+<div class="flex flex-col items-start min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">SBI</span>
+<span class="font-label-md text-label-md text-on-surface-variant">17:15</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Pasar Senen</span>
+</div>
+<!-- Trajectory Graphic -->
+<div class="flex-1 flex flex-col items-center px-3">
+<span class="font-label-xs text-label-xs text-on-surface font-bold tracking-wide mb-1">1hr 30min</span>
+<div class="w-full flex items-center justify-center relative">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant/40 shrink-0"></div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">train</span>
+</div>
+<div class="flex-1 border-t-2 border-dashed border-outline-variant/60 mx-1"></div>
+<div class="w-2 h-2 rounded-full bg-on-surface shrink-0"></div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-bold mt-1">Express Service</span>
+</div>
+<div class="flex flex-col items-end min-w-[70px] text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">SMT</span>
+<span class="font-label-md text-label-md text-on-surface-variant">18:45</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant/80">Kiaracondong</span>
+</div>
+</div>
+<!-- Card Bottom Strip -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 flex-wrap">
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-amber-500 fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-md text-on-surface font-bold">4.9</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-xs text-label-xs px-2.5 py-1 rounded-full font-semibold">
+            Snack included
+          </span>
+</div>
+<button class="bg-primary text-on-primary font-title-md text-title-md px-4 py-2 rounded-full shadow-[0_6px_20px_rgba(0,0,0,0.18)] hover:bg-primary-container active:scale-95 transition-all flex items-center gap-1">
+<span class="font-bold">$95</span>
+<span class="font-label-xs text-label-xs opacity-70">/pax</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro-Banner Voucher Teaser at Bottom of Results -->
+<div class="w-full bg-gradient-to-r from-tertiary-fixed via-surface-container-high to-secondary-container rounded-2xl p-4 flex items-center justify-between shadow-[0_8px_20px_-4px_rgba(85,22,190,0.12)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-tertiary-fixed-variant shadow-xs">
+<span class="material-symbols-outlined text-[20px]">local_activity</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold leading-tight">Discount coupon available</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Save 15% on Whoosh Express bookings</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-xs text-label-xs px-3.5 py-1.5 rounded-full font-bold active:scale-95 transition-transform">
+      Claim
+    </button>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe px-margin pointer-events-none mb-space-sm" data-active-classes="bg-primary text-on-primary shadow-[0_10px_25px_-5px_rgba(0,0,0,0.25)]"><div class="pointer-events-auto mx-auto max-w-md h-16 px-space-xs rounded-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_10px_30px_-4px_rgba(15,23,42,0.08)] flex items-center justify-around"><a class="flex items-center justify-center gap-1.5 h-11 px-space-md rounded-full text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-md text-label-md hidden sm:inline">Home</span></a><a class="flex items-center justify-center gap-1.5 h-11 px-space-md rounded-full text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-md text-label-md hidden sm:inline">Schedule</span></a><a aria-current="page" class="flex items-center justify-center gap-1.5 h-11 px-space-md rounded-full transition-all duration-200 bg-primary text-on-primary shadow-[0_10px_25px_-5px_rgba(0,0,0,0.25)]" data-path="tickets" href="#"><span class="material-symbols-outlined text-[22px]">confirmation_number</span><span class="font-label-md text-label-md hidden sm:inline">Tickets</span></a><a class="flex items-center justify-center gap-1.5 h-11 px-space-md rounded-full text-on-surface-variant hover:text-on-surface transition-all duration-200" data-path="categories" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-md text-label-md hidden sm:inline">Explore</span></a></div></nav></body></html>
