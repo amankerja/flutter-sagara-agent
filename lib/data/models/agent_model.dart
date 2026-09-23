@@ -45,7 +45,7 @@ class AgentModel {
     final name = def['name'] as String? ?? json['name'] as String? ?? formatAgentName(resolvedProfileId);
     final role = def['role'] as String? ?? json['role'] as String? ?? resolvedProfileId;
     final state = runtime['state'] as String? ?? json['state'] as String? ?? 'ACTIVE';
-    final model = runtime['model'] as String? ?? json['model'] as String? ?? 'claude-3-5-sonnet';
+    final model = runtime['model'] as String? ?? json['model'] as String? ?? 'SAGARA-AGENTIC-AI-1';
     final currentActivity = runtime['current_activity'] as String? ??
         runtime['currentActivity'] as String? ??
         json['currentActivity'] as String? ??

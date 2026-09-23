@@ -53,7 +53,7 @@ class ProfileModel {
           json['operationalTitle'] as String? ??
           _formatFallbackTitle(json['id'] as String? ?? ''),
       description: json['description'] as String? ?? '',
-      model: json['model'] as String? ?? json['model_tier'] as String? ?? 'claude-3-5-sonnet',
+      model: json['model'] as String? ?? json['model_tier'] as String? ?? 'SAGARA-AGENTIC-AI-1',
       modelPolicy: json['model_policy'] as String? ??
           json['modelPolicy'] as String? ??
           'primary=balanced, fallback=fast',

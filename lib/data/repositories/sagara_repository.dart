@@ -528,6 +528,17 @@ class SagaraRepository {
     return SagaraMockData.infrastructure;
   }
 
+  Future<Map<String, dynamic>?> getGovernanceMetrics() async {
+    if (isMockMode) return null;
+    try {
+      final res = await http.get(Uri.parse('$baseUrl/api/v1/governance'));
+      if (res.statusCode == 200) {
+        return jsonDecode(res.body) as Map<String, dynamic>;
+      }
+    } catch (_) {}
+    return null;
+  }
+
   Future<List<AttentionItem>> getAttentionItems() async {
     if (isMockMode) {
       // If there are real pending approvals in memory, synthesize attention items dynamically!
@@ -606,14 +617,15 @@ class SagaraRepository {
       final res = await http.get(Uri.parse('$baseUrl/api/v1/sessions/$sessionId'));
       if (res.statusCode == 200) {
         final Map<String, dynamic> data = jsonDecode(res.body);
-        if ((data['messages'] as List<dynamic>?)?.isEmpty ?? true) {
-          try {
-            final logsRes = await http.get(Uri.parse('$baseUrl/api/v1/sessions/$sessionId/logs'));
-            if (logsRes.statusCode == 200) {
-              data['messages'] = jsonDecode(logsRes.body);
-            }
-          } catch (_) {}
-        }
+        
+        // Always try to load real messages from recent logs if messages list is empty
+        try {
+          final logsRes = await http.get(Uri.parse('$baseUrl/api/v1/sessions/$sessionId/logs'));
+          if (logsRes.statusCode == 200) {
+            data['messages'] = jsonDecode(logsRes.body);
+          }
+        } catch (_) {}
+        
         return AgentSessionModel.fromJson(data);
       }
     } catch (_) {}

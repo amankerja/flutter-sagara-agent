@@ -103,7 +103,7 @@ class _AgentChatScreenState extends State<AgentChatScreen> {
               role: 'Fleet Operations Coordinator',
               description: 'Lead operations agent',
               state: 'ACTIVE',
-              model: 'claude-3-5-sonnet',
+              model: 'SAGARA-AGENTIC-AI-1',
               currentActivity: 'Orchestrating fleet operations',
             ),
     );

@@ -1,18 +1,22 @@
 # PRD: Sagara Mobile (Virtual Office & Agent Mission Control)
-**Versi:** 1.3.0 (9 Canonical Profiles & Full SOUL.md Synchronization + VPS Dual Engine)  
+**Versi:** 1.3.1 (Hermes Real State & Live Fleet Synchronized)  
 **Target Platform:** Android (Flutter SDK ^3.11.5 / Flutter 3.41+)  
 **Referensi Induk:** [amankerja/virtual-office-sagara-agent (GitHub origin/main)](https://github.com/amankerja/virtual-office-sagara-agent.git)  
 **Production Host:** `https://office.alkaralintas.site`  
-**Status:** IMPLEMENTED & VERIFIED (READY FOR OPERATION)  
+**Status:** IMPLEMENTED, VERIFIED & SYNCHRONIZED (READY FOR LOCAL PC DEVELOPMENT)  
 
 ---
 
 ## 1. Executive Summary & Visi Produk
 
-### 1.1 Latar Belakang & Sinkronisasi
+### 1.1 Latar Belakang & Sinkronisasi Real Fleet
 Sagara Mission Control menyajikan kontrol operasi agen AI otonom berbasis arsitektur Hermes Agent dan Sagara Platform. Seluruh kontrak data, API FastAPI, adapter SQLite/Hermes, dan antarmuka Command Center telah diverifikasi langsung dari cabang terbaru GitHub (`origin/main`).
 
-Pada versi 1.3.0, sistem profil dan persona agen telah disinkronkan 100% dengan repositori GitHub dan backend live VPS:
+Pada versi 1.3.1:
+- **Model Standardized:** Menggunakan model kanonikal `SAGARA-AGENTIC-AI-1` pada seluruh model agen & sesi chat.
+- **Provider Standardized:** Default provider `sagara` (menghapus residu mock `anthropic`).
+- **Live Hermes Log Aggregation:** Endpoint `/api/v1/sessions/{id}/logs` terhubung langsung untuk menampilkan streaming pesan riil dari database SQLite Hermes (`state.db`).
+- **Governance Metrics API:** Menambahkan integrasi endpoint `/api/v1/governance` untuk inspeksi konsumsi token dan burn rate harian.
 - **9 Profil Kanonikal Lengkap:** `lead`, `it-coding`, `it-support`, `marketing`, `cs`, `business`, `personal`, `sagara-lab`, dan `exportir-handal`.
 - **SOUL.md Template Lengkap:** Setiap agen memiliki berkas persona sistem yang utuh (*Operational Title, Mission, Responsibilities, Working Style, Decision Boundaries, Delegation Policy, Channel Routes, Workspace Policy*).
 - **Dual Schema Support:** Adapter data mendukung `snake_case` (FastAPI VPS backend: `session_count`, `allowed_skills`, `estimated_cost_usd`) dan `camelCase` (TypeScript frontend mocks) secara otomatis.

@@ -76,10 +76,10 @@ class AgentSessionModel {
     return AgentSessionModel(
       id: json['id'] as String? ?? 'sess-unknown',
       agentId: json['agent_id'] as String? ?? json['agentId'] as String? ?? json['profile_id'] as String? ?? '',
-      agentName: json['agent_name'] as String? ?? json['agentName'] as String? ?? '',
-      source: json['source'] as String? ?? 'web_console',
-      model: json['model'] as String? ?? 'claude-3-5-sonnet',
-      provider: json['provider'] as String? ?? 'anthropic',
+      agentName: json['agent_name'] as String? ?? json['agentName'] as String? ?? (json['profile_id'] != null ? json['profile_id'].toString().toUpperCase() : ''),
+      source: json['source'] as String? ?? 'hermes',
+      model: json['model'] as String? ?? 'SAGARA-AGENTIC-AI-1',
+      provider: json['provider'] as String? ?? 'sagara',
       startedAt: rawStarted != null ? DateTime.tryParse(rawStarted.toString()) ?? DateTime.now() : DateTime.now(),
       lastActivityAt: rawLast != null ? DateTime.tryParse(rawLast.toString()) ?? DateTime.now() : DateTime.now(),
       state: json['state'] as String? ?? 'ACTIVE',
@@ -88,14 +88,21 @@ class AgentSessionModel {
       costUsd: ((usage['actual_cost_usd'] ?? usage['estimated_cost_usd'] ?? usage['costUsd'] ?? 0.0) as num).toDouble(),
       messages: rawMessages.map((m) {
         if (m is Map<String, dynamic>) {
+          final rawTs = m['timestamp'];
+          DateTime msgTime = DateTime.now();
+          if (rawTs != null) {
+            if (rawTs is num) {
+              msgTime = DateTime.fromMillisecondsSinceEpoch((rawTs * 1000).toInt(), isUtc: true).toLocal();
+            } else {
+              msgTime = DateTime.tryParse(rawTs.toString()) ?? DateTime.now();
+            }
+          }
           return ChatMessageModel(
             id: m['id']?.toString() ?? 'msg-${DateTime.now().millisecondsSinceEpoch}',
-            agentId: json['agent_id']?.toString() ?? '',
-            sender: m['role']?.toString() ?? 'agent',
+            agentId: json['agent_id']?.toString() ?? json['profile_id']?.toString() ?? '',
+            sender: m['role']?.toString() == 'user' ? 'user' : 'agent',
             text: m['contentPreview']?.toString() ?? m['content']?.toString() ?? '',
-            timestamp: m['timestamp'] != null
-                ? DateTime.tryParse(m['timestamp'].toString()) ?? DateTime.now()
-                : DateTime.now(),
+            timestamp: msgTime,
             toolName: m['toolAssociation']?.toString() ?? m['tool_name']?.toString(),
             toolOutput: m['tool_output']?.toString(),
           );
