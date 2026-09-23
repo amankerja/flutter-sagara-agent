@@ -49,7 +49,12 @@ class ScheduleProvider with ChangeNotifier {
         final key = '${s.id}_${dt.day}_${dt.hour}_${dt.minute}';
         if (!_notifiedCronKeys.contains(key)) {
           _notifiedCronKeys.add(key);
-          final timeText = '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+          String timeText = '00:00';
+          if (s.startAt.length >= 16 && s.startAt.contains('T')) {
+            timeText = s.startAt.substring(11, 16);
+          } else {
+            timeText = '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+          }
           NotificationService.instance.triggerCronReminder(
             cronId: s.id,
             title: s.title,
@@ -64,14 +69,14 @@ class ScheduleProvider with ChangeNotifier {
 
   Future<void> sendTestCronNotification() async {
     final now = DateTime.now();
-    final testTime = now.add(const Duration(minutes: 18));
+    final testTime = now.add(const Duration(minutes: 5));
     final timeText = '${testTime.hour.toString().padLeft(2, '0')}:${testTime.minute.toString().padLeft(2, '0')}';
     await NotificationService.instance.triggerCronReminder(
       cronId: 'cron-test-notification',
-      title: 'fb-page-auto-uploader',
+      title: 'fb-page-comment-engagement',
       timeText: timeText,
-      agentName: 'Marketing Specialist',
-      minutesRemaining: 18,
+      agentName: 'Marketing',
+      minutesRemaining: 5,
     );
   }
 

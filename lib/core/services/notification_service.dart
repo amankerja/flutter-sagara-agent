@@ -75,6 +75,17 @@ class NotificationService {
       await HapticFeedback.mediumImpact();
     } catch (_) {}
 
+    // Clean, concise strings
+    final shortTitle = '⏰ $title';
+    final timeStr = timeText.isNotEmpty ? '$timeText WIB' : '';
+    final etaText = minutesRemaining <= 1 ? 'segera' : 'dlm $minutesRemaining m';
+    final shortAgent = agentName
+        .replaceAll(' & Content Agent', '')
+        .replaceAll(' Sentinel Agent', '')
+        .replaceAll(' Agent', '')
+        .trim();
+    final bodyText = '$timeStr ($etaText) • $shortAgent';
+
     // 2. Post Android notification
     try {
       final androidDetails = AndroidNotificationDetails(
@@ -83,11 +94,11 @@ class NotificationService {
         channelDescription: _cronChannelDesc,
         importance: Importance.high,
         priority: Priority.high,
-        ticker: 'Sagara Cron: $title',
+        ticker: '$shortTitle • $bodyText',
         styleInformation: BigTextStyleInformation(
-          'Jadwal tugas "$title" oleh agen $agentName akan dieksekusi pada $timeText WIB (dalam $minutesRemaining menit).',
-          contentTitle: '⏰ Cron Mendekati Jadwal: $title',
-          summaryText: 'Pemberitahuan Cron Otomatis',
+          bodyText,
+          contentTitle: shortTitle,
+          summaryText: 'Cron Swarm',
         ),
       );
 
@@ -95,8 +106,8 @@ class NotificationService {
       final id = cronId.hashCode.abs() % 100000;
       await _notificationsPlugin.show(
         id: id,
-        title: '⏰ Cron Job Mendekati: $title',
-        body: '$title ($agentName) dijadwalkan pukul $timeText WIB (dalam $minutesRemaining m)',
+        title: shortTitle,
+        body: bodyText,
         notificationDetails: notificationDetails,
       );
     } catch (_) {}

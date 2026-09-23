@@ -197,7 +197,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             final dt = item['dateTime'] as DateTime;
             final diff = item['diff'] as Duration;
             final isImminent = item['isImminent'] as bool;
-            final timeStr = '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+            final timeStr = s.startAt.length >= 16 && s.startAt.contains('T')
+                ? s.startAt.substring(11, 16)
+                : '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
 
             String countdownText;
             if (diff.inMinutes < 0) {
